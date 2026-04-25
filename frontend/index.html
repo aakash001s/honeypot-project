@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shadow Node Console - Demo UI</title>
+    <script src="domain-gate.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="webgl-canvas"></canvas>
+    <div class="spatial-light"></div>
+    <div class="orbital-shell" data-parallax="-0.08">
+        <div class="orbital-field" aria-hidden="true">
+            <svg viewBox="0 0 800 800" class="orbital-svg">
+                <circle cx="400" cy="400" r="260" class="orbit-ring" />
+                <circle cx="400" cy="400" r="180" class="orbit-ring faint" />
+                <circle cx="400" cy="400" r="90" class="orbit-ring faint" />
+            </svg>
+        </div>
+    </div>
+
+    <div class="gradient-overlay"></div>
+    <div class="glitter-overlay" aria-hidden="true"></div>
+
+    <div class="main-container">
+        <nav class="nav" data-parallax="0.04">
+            <div class="nav-logo">SHADOW<span class="dot">.</span>NODE</div>
+        </nav>
+
+        <section class="hero">
+            <div class="hero-content" data-parallax="0.14">
+                <p class="hero-kicker">Midnight Operator Console</p>
+                <h1 class="hero-title">
+                    <span class="title-line">Shadowline</span>
+                    <span class="title-line">Signal Grid</span>
+                </h1>
+                <p class="hero-subtitle">
+                    A cinematic security UI for premium command-center styling and layered motion.
+                    Demo only. No data is stored or transmitted.
+                </p>
+            </div>
+
+            <div class="status-row" data-parallax="0.09">
+                <div class="status-card">
+                    <span class="status-label">Firewall</span>
+                    <span class="status-value status-amber">Armed</span>
+                    <span class="status-meta">03 signals</span>
+                </div>
+                <div class="status-card">
+                    <span class="status-label">Active Nodes</span>
+                    <span class="status-value status-gold">128</span>
+                    <span class="status-meta">Midnight mesh</span>
+                </div>
+                <div class="status-card">
+                    <span class="status-label">Trace</span>
+                    <span class="status-value status-red">Live</span>
+                    <span class="status-meta">Echo lock</span>
+                </div>
+                <div class="status-card">
+                    <span class="status-label">Integrity</span>
+                    <span class="status-value status-gold">99.98%</span>
+                    <span class="status-meta">Verified</span>
+                </div>
+            </div>
+
+            <div class="terminal-panel" aria-hidden="true" data-parallax="0.12">
+                <div class="terminal-header">LIVE TRACE - SECURE CHANNEL</div>
+                <div class="terminal-body">
+                    <span class="terminal-line">[00:12] handshake > signal verified</span>
+                    <span class="terminal-line">[00:13] vault.sync > edge stabilized</span>
+                    <span class="terminal-line">[00:14] trace.route > shadow mesh online</span>
+                    <span class="terminal-line">[00:15] ops.guard > firewall armed</span>
+                </div>
+            </div>
+
+            <div class="login-wrap" data-parallax="0.08">
+                <div class="login-card">
+                    <div class="card-header">
+                        <div class="logo-mark" aria-hidden="true">NX</div>
+                        <h2 class="card-title">Operator Login</h2>
+                        <p class="card-subtitle">Demo interface for showcase use only</p>
+                    </div>
+
+                    <form id="loginForm" class="login-form">
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input
+                                type="email"
+                                id="email"
+                                class="form-input"
+                                placeholder="Enter your email"
+                                autocomplete="username"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group password-wrapper">
+                            <label for="password" class="form-label">Password</label>
+                            <input
+                                type="password"
+                                id="password"
+                                class="form-input"
+                                placeholder="Enter your password"
+                                autocomplete="current-password"
+                                required
+                            >
+                            <button type="button" class="password-toggle" id="togglePassword">
+                                <span class="eye-icon">VIEW</span>
+                            </button>
+                        </div>
+
+                        <button type="submit" class="submit-btn" id="submitBtn">
+                            <span class="btn-text">Sign In</span>
+                            <span class="btn-loader"></span>
+                        </button>
+
+                        <p class="auth-feedback" id="authFeedback" aria-live="polite"></p>
+                    </form>
+
+                    <p class="demo-note">Demo UI only. No data is stored or transmitted.</p>
+
+                    <div class="security-badge">
+                        <span>256-bit SSL Encrypted</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="intel-section">
+            <div class="section-heading" data-parallax="0.05">
+                <h2 class="section-title">Shadow Matrix</h2>
+                <p class="section-subtitle">
+                    Live protocols, stealth routing, and anomaly sweeps tuned for a refined high-security feel.
+                </p>
+            </div>
+            <div class="intel-grid">
+                <article class="intel-card">
+                    <span class="intel-tag">Stealth Sync</span>
+                    <h3 class="intel-title">Silent Handoff</h3>
+                    <p class="intel-body">Edge-first routing with adaptive failover keeps the trace clean.</p>
+                </article>
+                <article class="intel-card">
+                    <span class="intel-tag">Vault Control</span>
+                    <h3 class="intel-title">Layered Keys</h3>
+                    <p class="intel-body">Segmented access with strict protocol mapping.</p>
+                </article>
+                <article class="intel-card">
+                    <span class="intel-tag">Anomaly Sweep</span>
+                    <h3 class="intel-title">Precision Scan</h3>
+                    <p class="intel-body">Live integrity sweeps with heartbeat verification.</p>
+                </article>
+                <article class="intel-card">
+                    <span class="intel-tag">Trace Watch</span>
+                    <h3 class="intel-title">Adaptive Shield</h3>
+                    <p class="intel-body">Always-on monitoring with redline escalation.</p>
+                </article>
+            </div>
+        </section>
+
+        <footer class="page-footer">
+            <p class="footer-note">Demo interface. No data is stored or transmitted.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="auth-utils.js"></script>
+    <script src="honeypot-minimal.js"></script>
+</body>
+</html>
