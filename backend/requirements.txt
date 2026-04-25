@@ -1,0 +1,20 @@
+# Flask Web Framework
+Flask==3.0.0
+flask-cors==4.0.0
+gunicorn==21.2.0
+
+# Machine Learning
+scikit-learn==1.8.0
+xgboost==2.1.3
+joblib==1.4.2
+
+# Data Processing
+pandas==2.2.3
+numpy==1.26.4
+
+# AI Integration - USING OPENAI
+openai==2.20.0
+
+# Utilities
+python-dotenv==1.0.1
+requests==2.32.3
